@@ -57,9 +57,10 @@ public class Basic_movement : MonoBehaviour
                 if (current_time <= 0)
                 {
                     // current_player sendmessage for rigidbody to lock position/turn rigidbody off
-                    //target_player.GetComponent<Rigidbody>().isKinematic = true;
-                    //instantiate new palyer template at spawnpoint
-                    target_player = Instantiate(player_template, spawnpoint);
+                            //target_player.GetComponent<Rigidbody>().isKinematic = true;
+
+                    //instantiate new player template at spawnpoint
+                            target_player = Instantiate(player_template, spawnpoint);
 
                     current_time = max_time;
                 }
