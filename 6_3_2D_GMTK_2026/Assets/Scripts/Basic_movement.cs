@@ -114,7 +114,7 @@ public class Basic_movement : MonoBehaviour
             // shoot should tell the enemy to summon their smoke particle or we could move our particle there
             Hit_marker.transform.position = hit.transform.position;
             Hit_marker.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
-            D//ebug.Log("line away " + hit.collider);
+            //Debug.Log("line away " + hit.collider);
             //GenerateHitSpot(hit.point);
         }
 
