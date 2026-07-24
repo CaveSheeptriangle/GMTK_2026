@@ -40,9 +40,9 @@ public class Basic_movement : MonoBehaviour
                 target_player.transform.position += target_player.transform.right * (speed * playr_movement_flag.x) * Time.deltaTime;
             
             //horizontal movement if we feel like it
-            /*
+            
             if(playr_movement_flag.y != 0)
-                transform.position += transform.forward * (speed * playr_movement_flag.y) * Time.deltaTime;
+                target_player.transform.position += target_player.transform.forward * (speed * playr_movement_flag.y) * Time.deltaTime;
             //*/
 
             if(jump_frames > 0){
@@ -100,13 +100,15 @@ public class Basic_movement : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
-        //SetShootLine(right_shoot, 150f);
+        Debug.Log("line start ");
+        SetShootLine(right_shoot, 150f);
 
          RaycastHit hit;
         if (TestDirection(right_shoot.transform.position, Vector3.right, out hit))
         {
             //SetShootLine(right_shoot, hit.distance);
             hit.transform.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
+            Debug.Log("line away " + hit.name);
             //GenerateHitSpot(hit.point);
         }
 

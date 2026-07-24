@@ -17,6 +17,8 @@ public class Basic_movement : MonoBehaviour
     public LineRenderer left_shoot;
     public bool shot_life = false;
     public GameObject target_player;
+    public GameObject gunside_smoke;
+    public GameObject Hit_marker;
 
     // Spawn n timer control
     public GameObject player_template;
@@ -100,13 +102,19 @@ public class Basic_movement : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
-        //SetShootLine(right_shoot, 150f);
+
+        //
+        // summon the gun side smoke particle here
+        gunside_smoke.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
 
          RaycastHit hit;
         if (TestDirection(right_shoot.transform.position, Vector3.right, out hit))
         {
-            //SetShootLine(right_shoot, hit.distance);
-            hit.transform.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
+            
+            // shoot should tell the enemy to summon their smoke particle or we could move our particle there
+            Hit_marker.transform.position = hit.transform.position;
+            Hit_marker.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
+            D//ebug.Log("line away " + hit.collider);
             //GenerateHitSpot(hit.point);
         }
 
