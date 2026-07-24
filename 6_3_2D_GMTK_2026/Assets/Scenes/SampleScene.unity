@@ -1329,7 +1329,7 @@ GameObject:
   - component: {fileID: 2110425664}
   - component: {fileID: 2110425665}
   m_Layer: 6
-  m_Name: Rigt_fence
+  m_Name: Ra_fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
