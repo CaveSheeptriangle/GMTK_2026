@@ -15,6 +15,7 @@ public class Basic_movement : MonoBehaviour
      public float shoot_distance;
     public LineRenderer right_shoot;
     public LineRenderer left_shoot;
+    public bool shot_life = false;
     public GameObject target_player;
 
     // Spawn n timer control
@@ -22,6 +23,7 @@ public class Basic_movement : MonoBehaviour
     public double current_time = 10;
     public double max_time = 10;
     public Transform spawnpoint;
+    public bool spawning = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -41,7 +43,7 @@ public class Basic_movement : MonoBehaviour
             /*
             if(playr_movement_flag.y != 0)
                 transform.position += transform.forward * (speed * playr_movement_flag.y) * Time.deltaTime;
-            */
+            //*/
 
             if(jump_frames > 0){
                      target_player.transform.position += target_player.transform.up * jump_power * jump_frames * Time.deltaTime;
@@ -49,22 +51,36 @@ public class Basic_movement : MonoBehaviour
             }
 
             // Spawn n timer control
-            if (current_time > 0)
+            if (spawning && current_time > 0)
             {
-            current_time -= Time.deltaTime;
-            if (current_time <= 0)
-            {
-                // current_player sendmessage for rigidbody to lock position/turn rigidbody off
-                target_player.GetComponent<Rigidbody>().isKinematic = true;
+                current_time -= Time.deltaTime;
+                if (current_time <= 0)
+                {
+                    // current_player sendmessage for rigidbody to lock position/turn rigidbody off
+                    //target_player.GetComponent<Rigidbody>().isKinematic = true;
+                    //instantiate new palyer template at spawnpoint
+                    target_player = Instantiate(player_template, spawnpoint);
+
+                    current_time = max_time;
+                }
 
 
-                //instantiate new palyer template at spawnpoint
-                target_player = Instantiate(player_template, spawnpoint);
-
-                current_time = max_time;
+           
             }
-        }
+         // Line renderer Shot update section
+         /*
+            if(shot_life){
 
+                        shot_life -= 2;
+                        Debug.Log("line away " + shot_life);
+            }else{
+                
+                if(shot_life_2){
+
+                    SetShootLine(right_shoot, 0f);
+                }
+            }
+           */ 
 
     }
 
@@ -83,20 +99,32 @@ public class Basic_movement : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
+        //SetShootLine(right_shoot, 150f);
 
-
+         RaycastHit hit;
+        if (TestDirection(right_shoot.transform.position, Vector3.right, out hit))
+        {
+            //SetShootLine(right_shoot, hit.distance);
+            hit.transform.SendMessage("Shoot", SendMessageOptions.DontRequireReceiver);
+            //GenerateHitSpot(hit.point);
+        }
 
     }
 
     private bool TestDirection(Vector3 start, Vector3 direction, out RaycastHit hit)
     {
+        
         return Physics.Raycast(start, transform.TransformDirection(direction), out hit, shoot_distance);
     }
 
     private void SetShootLine(LineRenderer line, float distance)
     {
-        line.SetPosition(2, Vector3.right * (distance - 5));
-        line.SetPosition(3, Vector3.right * distance);
+        
+        
+        //line.SetPosition(2, Vector3.right * (distance - 5));
+        //line.SetPosition(3, Vector3.right * distance);
+        line.SetPosition(1, Vector3.right * distance);
+        shot_life = true;
     }
 
 }

@@ -553,14 +553,15 @@ MonoBehaviour:
   jump_frames: 0
   jump_max: 15
   playr_movement_flag: {x: 0, y: 0}
-  shoot_distance: 0
-  right_shoot: {fileID: 0}
+  shoot_distance: 150
+  right_shoot: {fileID: 1832038063}
   left_shoot: {fileID: 0}
   target_player: {fileID: 4643200578633858513}
   player_template: {fileID: 7340144698965299108, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
   current_time: 10
   max_time: 10
   spawnpoint: {fileID: 1201505630}
+  spawning: 0
 --- !u!114 &1201505633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +592,11 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!120 &1832038063 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+  m_PrefabInstance: {fileID: 6335476615533708482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1836601476
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,9 +779,49 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Parameters.widthMultiplier
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193862954659686558, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7340144698965299108, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
       propertyPath: m_Name
       value: block_player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536599890006494246, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_Name
+      value: RightLine_jimmy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7853815036943014335, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8323384408644471011, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
       propertyPath: m_LocalPosition.x
