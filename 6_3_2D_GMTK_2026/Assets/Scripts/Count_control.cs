@@ -15,8 +15,6 @@ public class Count_control : MonoBehaviour
     public float enemy_leg_oomph = 10;
     public float leash_dist = 0;
     public GameObject man_to_move;
-    public GameObject L_fencepost;
-    public GameObject R_fencepost;
     public bool dont_freeze_flag = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
