@@ -613,7 +613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8323384408644471011, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.015009195
+      value: -7.89
       objectReference: {fileID: 0}
     - target: {fileID: 8323384408644471011, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -652,7 +652,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3761274409490272081, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+    - {fileID: 328611274701027943, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
@@ -671,11 +673,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3493361633252588469, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
   m_PrefabInstance: {fileID: 1092427115}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1092427120 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 328611274701027943, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
-  m_PrefabInstance: {fileID: 1092427115}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1092427121 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6605368549350616100, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
@@ -684,11 +681,6 @@ GameObject:
 --- !u!1 &1092427122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1591340640859700144, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
-  m_PrefabInstance: {fileID: 1092427115}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1092427123 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3761274409490272081, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
   m_PrefabInstance: {fileID: 1092427115}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1510554224
@@ -826,10 +818,10 @@ MonoBehaviour:
   spawnpoint: {fileID: 1591473991}
   spawning: 0
   gun_spots:
-  - {fileID: 1092427123}
+  - {fileID: 0}
   - {fileID: 1092427122}
   - {fileID: 1092427121}
-  - {fileID: 1092427120}
+  - {fileID: 0}
   - {fileID: 1608968642}
   - {fileID: 1092427118}
 --- !u!4 &1591473991
@@ -1279,7 +1271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6951973209820501400, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.38
+      value: 5.86
       objectReference: {fileID: 0}
     - target: {fileID: 6951973209820501400, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1330,25 +1322,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1591473988}
     - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
+      propertyPath: Global_anim_step
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
+      propertyPath: begin_anim_chicanry
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: gun_spots.Array.size
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: 'gun_spots.Array.data[0]'
       value: 
-      objectReference: {fileID: 1092427123}
+      objectReference: {fileID: 1092427122}
     - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: 'gun_spots.Array.data[1]'
       value: 
-      objectReference: {fileID: 1092427122}
+      objectReference: {fileID: 1092427121}
     - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: 'gun_spots.Array.data[2]'
       value: 
-      objectReference: {fileID: 1092427121}
+      objectReference: {fileID: 1608968642}
     - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: 'gun_spots.Array.data[3]'
       value: 
-      objectReference: {fileID: 1092427120}
+      objectReference: {fileID: 1092427118}
     - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: 'gun_spots.Array.data[4]'
       value: 
@@ -1357,6 +1357,26 @@ PrefabInstance:
       propertyPath: 'gun_spots.Array.data[5]'
       value: 
       objectReference: {fileID: 1092427118}
+    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
+      propertyPath: available_anims.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
+      propertyPath: 'available_anims.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
+      propertyPath: 'available_anims.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
+      propertyPath: 'available_anims.Array.data[2]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
+      propertyPath: 'available_anims.Array.data[3]'
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
