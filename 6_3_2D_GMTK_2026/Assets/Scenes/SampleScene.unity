@@ -617,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8323384408644471011, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.73479426
+      value: 6.92
       objectReference: {fileID: 0}
     - target: {fileID: 8323384408644471011, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -812,16 +812,19 @@ MonoBehaviour:
   target_player: {fileID: 1950441400}
   gunside_smoke: {fileID: 1092427116}
   Hit_marker: {fileID: 2082894397}
+  trigger_refresh: 0
+  ammo_total: 5
+  ammo_curr: 5
+  statue_spawn: {fileID: 2125176716}
+  sculpt_template: {fileID: 8247063341447935534, guid: e6878dc11a2155641ac7a3effd6cdbff, type: 3}
   player_template: {fileID: 7340144698965299108, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
   current_time: 10
   max_time: 10
-  spawnpoint: {fileID: 1591473991}
+  spawnpoint: {fileID: 1591473988}
   spawning: 0
   gun_spots:
-  - {fileID: 0}
   - {fileID: 1092427122}
   - {fileID: 1092427121}
-  - {fileID: 0}
   - {fileID: 1608968642}
   - {fileID: 1092427118}
 --- !u!4 &1591473991
@@ -1172,6 +1175,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 13.97, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2125176716 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9172168378703402839, guid: 123dd5395bd26fa4e844b7dd20799ad5, type: 3}
+  m_PrefabInstance: {fileID: 1092427115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3644030195844677805
 PrefabInstance:
   m_ObjectHideFlags: 0

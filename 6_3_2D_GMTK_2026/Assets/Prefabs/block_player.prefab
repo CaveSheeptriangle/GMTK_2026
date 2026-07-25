@@ -301,6 +301,37 @@ Transform:
   - {fileID: 8721900970148265928}
   m_Father: {fileID: 8323384408644471011}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &3740309312229090859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9172168378703402839}
+  m_Layer: 0
+  m_Name: Statue_sapwn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9172168378703402839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3740309312229090859}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8323384408644471011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3761274409490272081
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +459,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 9172168378703402839}
   - {fileID: 1285949269376998333}
   - {fileID: 8247058052610732073}
   - {fileID: 2239759130325002619}
@@ -541,11 +573,17 @@ MonoBehaviour:
   target_player: {fileID: 0}
   gunside_smoke: {fileID: 0}
   Hit_marker: {fileID: 0}
+  trigger_refresh: 0
+  ammo_total: 5
+  ammo_curr: 5
+  statue_spawn: {fileID: 0}
+  sculpt_template: {fileID: 0}
   player_template: {fileID: 0}
   current_time: 10
   max_time: 10
   spawnpoint: {fileID: 0}
   spawning: 0
+  gun_spots: []
 --- !u!54 &1628746714829170491
 Rigidbody:
   m_ObjectHideFlags: 0
