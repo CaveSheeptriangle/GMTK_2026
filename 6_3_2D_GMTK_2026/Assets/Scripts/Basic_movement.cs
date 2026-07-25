@@ -26,7 +26,7 @@ public class Basic_movement : MonoBehaviour
     public double max_time = 10;
     public Transform spawnpoint;
     public bool spawning = false;
-
+    public List<GameObject> gun_spots;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -134,6 +134,12 @@ public class Basic_movement : MonoBehaviour
         //line.SetPosition(3, Vector3.right * distance);
         line.SetPosition(1, Vector3.right * distance);
         shot_life = true;
+    }
+    public void gun_spot_req(GameObject Sender){
+
+            Sender.SendMessage("Set_gun_list",gun_spots, SendMessageOptions.DontRequireReceiver);
+            //Save 
+
     }
 
 }

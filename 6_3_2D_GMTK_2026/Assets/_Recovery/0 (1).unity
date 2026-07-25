@@ -1279,7 +1279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6951973209820501400, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.38
+      value: 8.72
       objectReference: {fileID: 0}
     - target: {fileID: 6951973209820501400, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1322,41 +1322,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1950441400}
     - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
-      propertyPath: leash_dist
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
       propertyPath: Spawn_script
       value: 
       objectReference: {fileID: 1591473988}
-    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
-      propertyPath: gun_spots.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
-      propertyPath: 'gun_spots.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1092427123}
-    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
-      propertyPath: 'gun_spots.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1092427122}
-    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
-      propertyPath: 'gun_spots.Array.data[2]'
-      value: 
-      objectReference: {fileID: 1092427121}
-    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
-      propertyPath: 'gun_spots.Array.data[3]'
-      value: 
-      objectReference: {fileID: 1092427120}
-    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
-      propertyPath: 'gun_spots.Array.data[4]'
-      value: 
-      objectReference: {fileID: 1608968642}
-    - target: {fileID: 8942745494130572590, guid: 0857ba9c05e77a64898c7c1d801f7205, type: 3}
-      propertyPath: 'gun_spots.Array.data[5]'
-      value: 
-      objectReference: {fileID: 1092427118}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

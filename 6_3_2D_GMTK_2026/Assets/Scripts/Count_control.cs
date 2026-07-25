@@ -11,16 +11,21 @@ public class Count_control : MonoBehaviour
     public GameObject R_eye;
     public GameObject current_target;
     public GameObject ze_player;
+    
+    //V this is needed to get the gunnery positions cause those are on the spawn controller and not the character itself
+    public GameObject Spawn_script;
     public float enemy_speed = 0;
     public float enemy_leg_oomph = 10;
     public float leash_dist = 0;
     public GameObject man_to_move;
     public bool dont_freeze_flag = true;
+    public bool gun_spot_locked = false;
+    public List<GameObject> gun_spots = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    
+        //Spawn_script.SendMessage("gun_spot_req", this, SendMessageOptions.DontRequireReceiver);
     }
 
     // Update is called once per frame
@@ -51,11 +56,19 @@ public class Count_control : MonoBehaviour
 
         if(Vector3.Distance(man_to_move.transform.position, ze_player.transform.position) < leash_dist && dont_freeze_flag){
             // needs expansion for the empty system
-            current_target = ze_player;
-
+            if(!gun_spot_locked){
+                    current_target = Find_good_gun_spot(gun_spots, man_to_move);
+            }        
             // the MoveTowards function can move the enemy toward the player through all 3 dimensions, Alden wants just to move on X axis & this "does that"
             man_to_move.transform.position =  new Vector2(Vector3.MoveTowards(man_to_move.transform.position, current_target.transform.position, enemy_leg_oomph * Time.deltaTime).x, man_to_move.transform.position.y);
+            
+            Debug.Log(" differential is " + Vector3.MoveTowards(man_to_move.transform.position, current_target.transform.position, enemy_leg_oomph * Time.deltaTime));
+        
         }
+           
+           
+           
+           
             //man_to_move.transform.position =  new Vector2(Vector3.MoveTowards(man_to_move.transform.position, current_target.transform.position, enemy_leg_oomph * Time.deltaTime).x, man_to_move.transform.position.y);
         
         /*
@@ -63,10 +76,7 @@ public class Count_control : MonoBehaviour
 
                 /*                
                 if(Testfloor(man_to_move.transform.position, out hit)){ //&& Vector3.Distance(man_to_move.transform.position, current_target.transform.position) < 1f){
-
-                    
-
-
+                   
                 }else{
                 */
                 /*
@@ -99,4 +109,57 @@ public class Count_control : MonoBehaviour
     {
         return Physics.Raycast(start, -transform.up, out hit, 10f);
     }
+
+    private GameObject Find_good_gun_spot(List<GameObject> pos_list, GameObject sender){
+                GameObject best_choice = null;
+
+                foreach(GameObject pos in pos_list){
+
+                        if(best_choice == null){
+                                best_choice = pos;
+
+                        }else if(Vector3.Distance(pos.transform.position, sender.transform.position) < Vector3.Distance(best_choice.transform.position, sender.transform.position) ){
+                                best_choice = pos;
+
+                        }
+
+                }
+                gun_spot_locked = true;
+                return best_choice;
+
+    }
+
+    private GameObject Find_good_gun_spot(List<GameObject> pos_list, GameObject sender, GameObject blocked){
+                GameObject best_choice = null;
+
+                foreach(GameObject pos in pos_list){
+
+
+                        if(pos != blocked){
+                             
+
+                            if(Vector3.Distance(pos.transform.position, sender.transform.position) < Vector3.Distance(best_choice.transform.position, sender.transform.position))
+                                    best_choice = pos;
+
+                        }
+
+                }
+                gun_spot_locked = true;
+                return best_choice;
+
+    }
+
+    public void Set_gun_list(List<GameObject> x){
+
+            gun_spots = x;
+
+
+    }
+
+
+
+
+
+
+
 }
